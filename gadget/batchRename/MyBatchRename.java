@@ -1,140 +1,54 @@
 package batchRename;
-
 import java.io.File;
-import java.util.Scanner;
-
+import java.io.IOException;
 
 /**
- * ½÷É÷Ê¹ÓÃ£¡³ÌĞòÒ»µ©ÔËĞĞ£¬±ã²»¿É³·»Ø£¡×¢ÒâÂ·¾¶µÄÌîĞ´£¡
- * Óöµ½µÄÎÊÌâ£º×ªÒåÎÊÌâ <=> ½â¾ö·½·¨£ºÔÚ×Ö·ûÇ°¼Ó ¡¾\\¡¿
+ * @Auther: Code
+ * @Date: 2018/9/9 18:02
+ * @Description: æ‰¹é‡é‡å‘½åæ–‡ä»¶
+ * æ¥æºï¼šhttps://www.cnblogs.com/CodeKjm/p/9615815.html
  */
+public class aaaaa {
+    static String newString = "";//æ–°å­—ç¬¦ä¸²,å¦‚æœæ˜¯å»æ‰å‰ç¼€åç¼€å°±ç•™ç©ºï¼Œå¦åˆ™å†™ä¸Šéœ€è¦æ›¿æ¢çš„å­—ç¬¦ä¸²
+    static String oldString = "å»º";//è¦è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
+    static String dir = "G:\\æ–°å»ºæ–‡ä»¶å¤¹";//æ–‡ä»¶æ‰€åœ¨è·¯å¾„ï¼Œæ‰€æœ‰æ–‡ä»¶çš„æ ¹ç›®å½•ï¼Œè®°å¾—ä¿®æ”¹ä¸ºä½ ç”µè„‘ä¸Šçš„æ–‡ä»¶æ‰€åœ¨è·¯å¾„
 
-public class MyBatchRename {
-	interface rename {
-		String renameRule(String oldName);
-	}
-
-	private String dir;// ´Ë³ÌĞò»áµİ¹é±éÀú´ËÄ¿Â¼ÏÂËùÓĞÎÄ¼ş,¼ÇµÃĞŞ¸ÄÎªÄãµçÄÔÉÏµÄÎÄ¼şËùÔÚÂ·¾¶
-	private rename r = (String oldName) -> null;
-	private boolean canRename = false; // ÎªÔ¤ÀÀĞ§¹û¶øÉè¼Æ
-
-	public MyBatchRename(String path) {
-		setDir(path);
-	}
-
-	public void delete(String Deleted) {
-		this.r = (String oldName) -> {
-			return oldName.replaceAll(Deleted, "");// ĞÂÃû×Ö
-		};
-	}
-
-	public void replace(String regex, String replacement) {
-		this.r = (String oldName) -> {
-			return oldName.replaceAll(regex, replacement);// ĞÂÃû×Ö
-		};
-	}
-
-	public void addStringToFileAtHead(String head) {
-		this.r = (String oldName) -> {
-			return head + oldName;// ĞÂÃû×Ö
-		};
-	}
-
-	public void bringTheStringForward(String str) {
-		this.r = (String oldName) -> {
-			StringBuffer newName = new StringBuffer("");
-			String temp[] = oldName.split(str);
-			if (oldName.contains(str)) {
-				newName.append(str);
-				for (int i = 0; i < temp.length; i++) {
-					newName.append(temp[i]);
-				}
-				return newName.toString();// ĞÂÃû×Ö
-			} else {
-				return oldName;
-			}
-		};
-	}
-	
-	/**
-	 * ÒÔÊı×ÖÎªÃûµÄÎÄ¼şÖØÃüÃûºó¸ÃÊı×Ö¼ÓÉÏ x 
-	 * ÀıÈç ¡¾1.txt¡¿,x Îª 2 £¬ÔòÖØÃüÃûºó ¡¾3.txt¡¿
-	 */
-	public void addX(int x) {
-		this.r = (String oldName) -> {
-			String s[]=oldName.split("\\.");
-			try {
-				oldName=String.valueOf(Integer.valueOf(s[0])+x)+"."+s[1];
-			} catch (Exception e) {
-				System.out.println("ÎÄ¼şÃû²»ÊÇÊı×Ö»òÎÄ¼şÎŞºó×º£¬"+oldName+" ²»ÄÜÖØÃüÃû");
-//				e.printStackTrace();
-			}
-			return oldName;
-		};
-	}
-	
-	
-
-	private String getNewName(File renamedFile) {
-		return this.r.renameRule(renamedFile.getName());
-	}
-
-	/**
-	 * µİ¹é±éÀúÎÄ¼ş¼Ğ»ñÈ¡ÎÄ¼ş
-	 */
-	private void recursiveTraversalFolder() {
-		File folder = new File(dir);
-		if (folder.exists()) {
-			// »ñÈ¡ÎÄ¼ş¼ĞÀïËùÓĞÎÄ¼ş
-			File[] fileArr = folder.listFiles();
-			if (null == fileArr || fileArr.length == 0) {
-				System.out.println("ÎÄ¼ş¼ĞÊÇ¿ÕµÄ!");
-				return;
-			} else {
-				for (int i=1;i<=fileArr.length;i++) {
-					/**
-					 * ÎªÊ²Ã´Òª´ÓÎ²µ½Í·£¿ÒòÎªÈôÎÄ¼ş 1.txt Óë ÎÄ¼ş 2.txt Í¬Ê±´æÔÚ£¬µ÷ÓÃ addX() »áÓĞÕâÑùÒ»ÖÖÇé¿ö£º
-					 * 1.txt ÖØÃüÃûÎª 2.txt Ê±£¬ÓÉÓÚ 2.txt ÒÑ´æÔÚ£¬µ¼ÖÂÖØÃüÃûÊ§°Ü
-					 */
-					File file=fileArr[fileArr.length-i];
-					if (file.isDirectory()) {// ÊÇÎÄ¼ş¼Ğ£¬¼ÌĞøµİ¹é£¬Èç¹ûĞèÒªÖØÃüÃûÎÄ¼ş¼Ğ£¬ÕâÀï¿ÉÒÔ×ö´¦Àí
-						System.out.println("ÎÄ¼ş¼Ğ:" + file.getAbsolutePath() + "£¬¼ÌĞøµİ¹é£¡");
-						recursiveTraversalFolder();
-					} else {// ÊÇÎÄ¼ş£¬ÔòÖØÃüÃû
-							// ĞÂÎÄ¼ş = ÎÄ¼şËùÔÚÎÄ¼ş¼ĞÂ·¾¶ + ĞÂÎÄ¼şÃû
-						File newFile = new File(file.getParentFile() + "/" + getNewName(file));
-						if (canRename) {
-							file.renameTo(newFile);// ÖØÃüÃû
-						}
-						System.out.print(newFile.getName().equals(file.getName()) ? "" : "ÖØÃüÃûºó£º" + newFile.getName() + "\n");
-
-					}
-
-				}
-			}
-		} else {
-			System.out.println("ÎÄ¼ş²»´æÔÚ!");
-		}
-	}
-
-	public void startOperate() {
-		System.out.println("----------Ô¤ÀÀ----------");
-		recursiveTraversalFolder();
-		System.out.println("È·ÈÏ´Ë²Ù×÷£¿³ÌĞòÒ»µ©ÔËĞĞ£¬±ã²»¿É³·»Ø!    y/n");
-		Scanner input = new Scanner(System.in);
-		if (input.nextLine().equals("y") || input.nextLine().equals("Y")) {
-			this.canRename = true;
-			System.out.println("----------Ö´ĞĞ----------");
-			recursiveTraversalFolder();
-		}
-	}
-
-	public String getDir() {
-		return dir;
-	}
-
-	private void setDir(String dir) {
-		this.dir = dir;
-	}
-
+    public static void main(String[] args) throws IOException {
+        recursiveTraversalFolder(dir);//é€’å½’éå†æ­¤è·¯å¾„ä¸‹æ‰€æœ‰æ–‡ä»¶å¤¹
+    }
+ /**
+   * é€’å½’éå†æ–‡ä»¶å¤¹è·å–æ–‡ä»¶
+   */
+    public static void recursiveTraversalFolder(String path) {
+        File folder = new File(path);
+        if (folder.exists()) {
+            File[] fileArr = folder.listFiles();
+            if (null == fileArr || fileArr.length == 0) {
+                System.out.println("æ–‡ä»¶å¤¹æ˜¯ç©ºçš„!");
+                return;
+            } else {
+                File newDir = null;//æ–‡ä»¶æ‰€åœ¨æ–‡ä»¶å¤¹è·¯å¾„+æ–°æ–‡ä»¶å
+                String newName = "";//æ–°æ–‡ä»¶å
+                String fileName = null;//æ—§æ–‡ä»¶å
+                File parentPath = new File("");//æ–‡ä»¶æ‰€åœ¨çˆ¶çº§è·¯å¾„
+                for (File file : fileArr) {
+                    if (file.isDirectory()) {//æ˜¯æ–‡ä»¶å¤¹ï¼Œç»§ç»­é€’å½’ï¼Œå¦‚æœéœ€è¦é‡å‘½åæ–‡ä»¶å¤¹ï¼Œè¿™é‡Œå¯ä»¥åšå¤„ç†
+                        System.out.println("æ–‡ä»¶å¤¹:" + file.getAbsolutePath() + "ï¼Œç»§ç»­é€’å½’ï¼");
+                        recursiveTraversalFolder(file.getAbsolutePath());
+                    } else {//æ˜¯æ–‡ä»¶ï¼Œåˆ¤æ–­æ˜¯å¦éœ€è¦é‡å‘½å
+                        fileName = file.getName();
+                        parentPath = file.getParentFile();
+                        if (fileName.contains(oldString)) {//æ–‡ä»¶ååŒ…å«éœ€è¦è¢«æ›¿æ¢çš„å­—ç¬¦ä¸²
+                            newName = fileName.replaceAll(oldString, newString);//æ–°åå­—
+                            newDir = new File(parentPath + "/" + newName);//æ–‡ä»¶æ‰€åœ¨æ–‡ä»¶å¤¹è·¯å¾„+æ–°æ–‡ä»¶å
+                            file.renameTo(newDir);//é‡å‘½å
+                            System.out.println("ä¿®æ”¹åï¼š" + newDir);
+                        }
+                    }
+                }
+            }
+        } else {
+            System.out.println("æ–‡ä»¶ä¸å­˜åœ¨!");
+        }
+    }
 }

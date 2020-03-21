@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * 来源：https://www.cnblogs.com/CodeKjm/p/9615815.html
  */
 
-public class MyBatchRename{
+public class BatchRename{
 	interface rename {
 		String renameRule(String oldName);
 	}
@@ -23,7 +23,7 @@ public class MyBatchRename{
 	private rename r = (String oldName) -> null;
 	private boolean canRename = false; // 为预览效果而设计
 
-	public MyBatchRename(String path) {
+	public BatchRename(String path) {
 		setDir(path);
 	}
 
@@ -127,9 +127,7 @@ public class MyBatchRename{
 							file.renameTo(newFile);// 重命名
 						}
 						System.out.print(newFile.getName().equals(file.getName()) ? "" : "重命名后：" + newFile.getName() + "\n");
-
 					}
-
 				}
 			}
 		} else {
@@ -150,6 +148,7 @@ public class MyBatchRename{
 		else {
 			System.out.println("操作取消");
 		}
+		input.close();
 	}
 
 	public String getDir() {

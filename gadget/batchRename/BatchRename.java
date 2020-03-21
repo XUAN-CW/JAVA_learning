@@ -140,7 +140,9 @@ public class BatchRename{
 		recursiveTraversalFolder(dir);
 		System.out.println("确认此操作？程序一旦运行，便不可撤回!    y/n");
 		Scanner input = new Scanner(System.in);
-		if (input.nextLine().equals("y") || input.nextLine().equals("Y")) {
+		String choise = input.next();
+		input.close();
+		if (choise.equals("y") || choise.equals("Y")) {
 			this.canRename = true;
 			System.out.println("----------执行----------");
 			recursiveTraversalFolder(dir);

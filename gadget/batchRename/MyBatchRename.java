@@ -2,6 +2,9 @@ package batchRename;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 
 /**
@@ -63,19 +66,12 @@ public class MyBatchRename{
 		};
 	}
 
+	/**
+	 * 将文件名中的某字符串提到前面
+	 */
 	public void bringTheStringForward(String str) {
 		this.r = (String oldName) -> {
-			StringBuffer newName = new StringBuffer("");
-			String temp[] = oldName.split(str);
-			if (oldName.contains(str)) {
-				newName.append(str);
-				for (int i = 0; i < temp.length; i++) {
-					newName.append(temp[i]);
-				}
-				return newName.toString();// 新名字
-			} else {
-				return oldName;
-			}
+			return str + oldName.replaceFirst(str, "");
 		};
 	}
 	
@@ -85,13 +81,20 @@ public class MyBatchRename{
 	 */
 	public void addX(int x) {
 		this.r = (String oldName) -> {
-			String s[]=oldName.split("\\.");
-			try {
-				oldName=String.valueOf(Integer.valueOf(s[0])+x)+"."+s[1];
-			} catch (Exception e) {
-				System.out.println("文件名不是数字或文件无后缀，"+oldName+" 不能重命名");
+			String newName=oldName;
+			Pattern p = Pattern.compile("\\d+");
+			//创建Matcher对象
+			Matcher m = p.matcher(oldName);
+			if (m.find()) {//找到了数字
+				/**
+				 * 重命名的时候可能遇到这么一种情况：
+				 * 【1.txt】重命名为 【3.txt】，原先又存在  【3.txt】，
+				 * 这种情况下重命名会失败，所以我给新文件名加上 ABCDEFGHIJK （应该没有哪个文件包含有这个字符串吧）
+				 * 之后删除 ABCDEFGHIJK 即可
+				 */
+				newName="ABCDEFGHIJK"+oldName.replaceFirst(m.group(0), String.valueOf(Integer.valueOf(m.group(0))+x));
 			}
-			return oldName;
+			return newName;
 		};
 	}
 	
@@ -143,6 +146,9 @@ public class MyBatchRename{
 			this.canRename = true;
 			System.out.println("----------执行----------");
 			recursiveTraversalFolder(dir);
+		}
+		else {
+			System.out.println("操作取消");
 		}
 	}
 

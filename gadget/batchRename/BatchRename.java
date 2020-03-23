@@ -92,7 +92,7 @@ public class BatchRename{
 				 * 这种情况下重命名会失败，所以我给新文件名加上 ABCDEFGHIJK （应该没有哪个文件包含有这个字符串吧）
 				 * 之后删除 ABCDEFGHIJK 即可
 				 */
-				newName="ABCDEFGHIJK"+oldName.replaceFirst(m.group(0), String.valueOf(Integer.valueOf(m.group(0))+x));
+				newName="ABCDEFGHIJK"+oldName.replaceFirst(m.group(0), String.format("%03d",Integer.valueOf(m.group(0))+x));
 			}
 			return newName;
 		};

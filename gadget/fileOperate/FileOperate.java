@@ -26,7 +26,7 @@ public class FileOperate {
      *            目标文件所在的目录 
      * @return 
      */  
-    public static boolean copyGeneralFile(String srcPath, String destDir) {  
+    public boolean copyGeneralFile(String srcPath, String destDir) {  
         boolean flag = false;  
         File file = new File(srcPath);  
         if (!file.exists()) {  
@@ -242,7 +242,7 @@ public class FileOperate {
      * @param destDir 
      *            同上 
      */  
-    public static boolean cutGeneralFile(String srcPath, String destDir) {  
+    public boolean cutGeneralFile(String srcPath, String destDir) {  
         if (!copyGeneralFile(srcPath, destDir)) {  
             System.out.println("复制失败导致剪切失败!");  
             return false;  

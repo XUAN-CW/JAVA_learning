@@ -118,7 +118,7 @@ public class BatchRename{
 			} else {
 				for (File file : fileArr) {
 					if (file.isDirectory()) {// 是文件夹，继续递归，如果需要重命名文件夹，这里可以做处理
-						System.out.println("文件夹:" + file.getAbsolutePath() + "，继续递归！");
+//						System.out.println("文件夹:" + file.getAbsolutePath() + "，继续递归！");
 						recursiveTraversalFolder(file.getAbsolutePath());
 					} else {// 是文件，则重命名
 						// 新文件 = 文件所在文件夹路径 + 新文件名
@@ -140,8 +140,8 @@ public class BatchRename{
 		recursiveTraversalFolder(dir);
 		System.out.println("确认此操作？程序一旦运行，便不可撤回!    y/n");
 		Scanner input = new Scanner(System.in);
-		String choise = input.next();
-		input.close();
+		String choise = input.nextLine();
+//		input.close();
 		if (choise.equals("y") || choise.equals("Y")) {
 			this.canRename = true;
 			System.out.println("----------执行----------");
@@ -150,7 +150,6 @@ public class BatchRename{
 		else {
 			System.out.println("操作取消");
 		}
-		input.close();
 	}
 
 	public String getDir() {

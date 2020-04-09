@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6e552992-a025-4878-b89c-e90188fbec20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/checkCodeServlet/CheckCodeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/outputBytesToTheBrowser/ResponseDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/outputCharactersToTheBrowser/ResponseDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/redirectDemo/ResponseDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/redirectDemo/ResponseDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/relativePathAndAbsolutePath/ResponseDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/web/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/3_servletcontext.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/MIMEDemo/ServletContextDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/getRealPathDemo/ServletContextDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/getServletContextDemo/ServletContextDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/shareDemo/ServletContextDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/shareDemo/ServletContextDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/13_CookieAndSession.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/1_cookie.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/src/cookieCase/CookieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/src/cookieInChinese/CookieDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/src/cookieLiveTime/CookieDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/src/helloCookie/CookieDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/src/helloCookie/CookieDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/1_cookie/src/multiCookie/CookieDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/2_session/2_session.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/2_session/src/helloSession/SessionDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/2_session/src/helloSession/SessionDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/2_session/src/serverCloseDemo/SessionDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/2_session/src/setMaxAgeDemo/SessionDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../13_CookieAndSession/2_session/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/14_FilterAndListener.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/filter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/dispatcherTypesDemo/FilterDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/executionFlow/FilterDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/filterChain/FilterDemo6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/filterChain/FilterDemo7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/filterPath/FilterDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/helloFilter/FilterDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/liveTime/FilterDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/servlet/ServletDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/src/servlet/ServletDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../14_FilterAndListener/filter/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/bin/com/sxt/server/basic/p.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/bin/com/sxt/server/basic/p.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/src/com/sxt/server/basic/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/src/com/sxt/server/basic/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/src/com/sxt/server/basic/ReflectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/src/com/sxt/server/basic/ReflectTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/src/com/sxt/server/basic/p.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study01/src/com/sxt/server/basic/p.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Dispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Mapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Mapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/WebContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/WebContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/WebHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/server/core/WebHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/user/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/user/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/user/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../08_networkProgramming/3_Server_study/Server_study04/src/com/shsxt/user/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../11_servlet/1_servlet/src/sverletDemo/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/web/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\maven_repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aAkoENs9EggwmKKdRGqnkVZNgk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e552992-a025-4878-b89c-e90188fbec20" name="Default Changelist" comment="" />
+      <created>1586185958121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586185958121</updated>
+      <workItem from="1586185961275" duration="598000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1586186496726">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586186496726" />
+    <state width="1493" height="522" key="GridCell.Tab.0.bottom" timestamp="1586186558915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="522" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586186558915" />
+    <state width="1493" height="522" key="GridCell.Tab.0.center" timestamp="1586186558915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="522" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586186558915" />
+    <state width="1493" height="522" key="GridCell.Tab.0.left" timestamp="1586186558915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="522" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586186558915" />
+    <state width="1493" height="522" key="GridCell.Tab.0.right" timestamp="1586186558915">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="522" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586186558915" />
+    <state x="178" y="116" key="new project wizard" timestamp="1586186556086">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="116" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586186556086" />
+  </component>
+</project>

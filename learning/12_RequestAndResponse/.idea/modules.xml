@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/12_RequestAndResponse.iml" filepath="$PROJECT_DIR$/12_RequestAndResponse.iml" />
       <module fileurl="file://$PROJECT_DIR$/1_request/1_request.iml" filepath="$PROJECT_DIR$/1_request/1_request.iml" />
       <module fileurl="file://$PROJECT_DIR$/2_response/2_response.iml" filepath="$PROJECT_DIR$/2_response/2_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3_servletcontext/3_servletcontext.iml" filepath="$PROJECT_DIR$/3_servletcontext/3_servletcontext.iml" />
     </modules>
   </component>
 </project>

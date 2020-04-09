@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="2_session:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="27ec5242-dbee-4808-b25e-f0ee4ef8b21b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/checkCodeServlet/CheckCodeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/outputBytesToTheBrowser/ResponseDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/outputCharactersToTheBrowser/ResponseDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/redirectDemo/ResponseDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/redirectDemo/ResponseDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/src/relativePathAndAbsolutePath/ResponseDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/web/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/MIMEDemo/ServletContextDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/getRealPathDemo/ServletContextDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/getServletContextDemo/ServletContextDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/shareDemo/ServletContextDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/src/shareDemo/ServletContextDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_cookie/src/cookieCase/CookieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_cookie/src/cookieInChinese/CookieDemo5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_cookie/src/cookieLiveTime/CookieDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_cookie/src/helloCookie/CookieDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_cookie/src/helloCookie/CookieDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_cookie/src/multiCookie/CookieDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_session/src/helloSession/SessionDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_session/src/helloSession/SessionDemo2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_session/src/serverCloseDemo/SessionDemo4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_session/src/setMaxAgeDemo/SessionDemo3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_session/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../12_RequestAndResponse/2_response/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../12_RequestAndResponse/3_servletcontext/web/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1a2MgpVKsFkImZx1m1aCxo6j25v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/1_cookie/src" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA_learning\learning\13_CookieAndSession\2_session\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JAVA_learning\learning\13_CookieAndSession\1_cookie\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="2_session:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/2_session_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_30_13_CookieAndSession_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="2_session:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.01945946" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27ec5242-dbee-4808-b25e-f0ee4ef8b21b" name="Default Changelist" comment="" />
+      <created>1585929348098</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585929348098</updated>
+      <workItem from="1585929355204" duration="698000" />
+      <workItem from="1585968024434" duration="11976000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="74" key="#Project_Structure" timestamp="1585977145185">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1585977145185" />
+    <state width="324" height="696" key="GridCell.Tab.0.bottom" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.0.center" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.0.left" timestamp="1586031745015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586031745015" />
+    <state width="324" height="696" key="GridCell.Tab.0.right" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.1.bottom" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.1.center" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.1.left" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.1.right" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.2.bottom" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.2.center" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.2.left" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state width="324" height="696" key="GridCell.Tab.2.right" timestamp="1586031745016">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="324" height="696" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1586031745016" />
+    <state x="272" y="57" key="SettingsEditor" timestamp="1585970351963">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585970351963" />
+    <state x="178" y="0" key="new project wizard" timestamp="1586031740934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586031740934" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585973749695">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585973749695" />
+  </component>
+</project>

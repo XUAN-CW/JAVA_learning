@@ -2,30 +2,70 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="3_servletcontext:war exploded" />
+      <artifact name="test:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146dce95-48d3-44aa-9e7a-91e7927144e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2_response/src/checkCodeServlet/CheckCodeServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_response/src/outputBytesToTheBrowser/ResponseDemo5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_response/src/outputCharactersToTheBrowser/ResponseDemo4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_response/src/redirectDemo/ResponseDemo1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_response/src/redirectDemo/ResponseDemo2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_response/src/relativePathAndAbsolutePath/ResponseDemo3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2_response/web/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_servletcontext/src/MIMEDemo/ServletContextDemo2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_servletcontext/src/getRealPathDemo/ServletContextDemo5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_servletcontext/src/getServletContextDemo/ServletContextDemo1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_servletcontext/src/shareDemo/ServletContextDemo3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_servletcontext/src/shareDemo/ServletContextDemo4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3_servletcontext/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2_response/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/3_servletcontext/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.ejb.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.persistence.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.resource.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/lib/mysql-connector-java-8.0.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/Database/ConnectWithDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/Database/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/ResponseDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/web/WEB-INF/lib/mysql-connector-java-8.0.20.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/web/lib/mysql-connector-java-8.0.20.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gadget/fileOperate/BatchRename.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../gadget/fileOperate/BatchRename.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gadget/fileOperate/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../gadget/fileOperate/Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gadget/fileOperate/GetFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../gadget/fileOperate/GetFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../gadget/fileOperate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../gadget/fileOperate/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="aliyun" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="aliyun" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -49,25 +89,63 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/web/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\server\web\lib" />
+      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\lib" />
       <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\3_servletcontext\src\download" />
       <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\3_servletcontext\web" />
       <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\2_response\web" />
-      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\2_response\src\checkCodeServlet" />
-      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\2_response\src\checkCodeServlet " />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\server\web\WEB-INF\lib" />
+      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\server\lib" />
+      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\lib" />
+      <recent name="E:\JAVA_learning\learning\12_RequestAndResponse\server\src\Database" />
+      <recent name="E:\courseManagement\RequestAndResponse" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Database.Main" />
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mysql-connector-java-8.0.20.jar" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/mysql-connector-java-8.0.20.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="test:war exploded" />
+        </option>
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/test_war_exploded/responseDemo1" />
       <deployment>
-        <artifact name="3_servletcontext:war exploded">
+        <artifact name="test:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/3_servletcontext_war_exploded" />
+            <option name="CONTEXT_PATH" value="/test_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -79,6 +157,39 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3104" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -97,16 +208,21 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="3_servletcontext:war exploded" />
+          <artifact name="test:war exploded" />
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.0154639175" />
+          <option name="contentProportion" value="0.35314685" />
           <treeState>
             <expand>
               <path>
@@ -117,6 +233,15 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="aliyun: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="aliyun: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@3deee5b2" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -136,6 +261,16 @@
       <option name="presentableId" value="Default" />
       <updated>1585918359804</updated>
       <workItem from="1585918368305" duration="8295000" />
+      <workItem from="1588608319584" duration="759000" />
+      <workItem from="1588609517616" duration="13000" />
+      <workItem from="1588609660699" duration="2972000" />
+      <workItem from="1588639176152" duration="2997000" />
+      <workItem from="1588681525269" duration="10000" />
+      <workItem from="1588681583856" duration="9304000" />
+      <workItem from="1588695561414" duration="461000" />
+      <workItem from="1588696653664" duration="866000" />
+      <workItem from="1588735827220" duration="439000" />
+      <workItem from="1588736282518" duration="13969000" />
     </task>
     <servers />
   </component>
@@ -146,65 +281,117 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585923984739">
+    <state x="548" y="220" key="#BuildArtifactsBeforeRunChooser" timestamp="1588747576929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585923984739" />
-    <state width="279" height="458" key="GridCell.Tab.0.bottom" timestamp="1585929353943">
+    <state x="548" y="220" key="#BuildArtifactsBeforeRunChooser/0.0.1536.824@0.0.1536.824" timestamp="1588747576929" />
+    <state x="563" y="65" key="#Project_Structure" timestamp="1588748716894">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585929353943" />
-    <state width="279" height="458" key="GridCell.Tab.0.center" timestamp="1585929353943">
+    <state x="563" y="65" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1588748716894" />
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588749526989">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585929353943" />
-    <state width="279" height="458" key="GridCell.Tab.0.left" timestamp="1585929353942">
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588749526989" />
+    <state x="498" y="193" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1588609753412">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585929353942" />
-    <state width="279" height="458" key="GridCell.Tab.0.right" timestamp="1585929353943">
+    <state x="498" y="193" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1588609753412" />
+    <state x="360" y="73" width="1010" height="676" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1588747859943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585929353943" />
-    <state width="279" height="458" key="GridCell.Tab.1.bottom" timestamp="1585929353944">
+    <state x="360" y="73" width="1010" height="676" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.824@0.0.1536.824" timestamp="1588747859943" />
+    <state x="770" y="129" width="547" height="565" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1588750807966">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585929353944" />
-    <state width="279" height="458" key="GridCell.Tab.1.center" timestamp="1585929353943">
+    <state x="770" y="129" width="547" height="565" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1536.824@0.0.1536.824" timestamp="1588750807966" />
+    <state x="670" y="170" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1588750799094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585929353943" />
-    <state width="279" height="458" key="GridCell.Tab.1.left" timestamp="1585929353943">
+    <state x="670" y="170" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588750799094" />
+    <state x="484" y="67" key="#mysql-connector-java-8.0.20.jar" timestamp="1588748586134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585929353943" />
-    <state width="279" height="458" key="GridCell.Tab.1.right" timestamp="1585929353944">
+    <state x="484" y="67" key="#mysql-connector-java-8.0.20.jar/0.0.1536.824@0.0.1536.824" timestamp="1588748586134" />
+    <state x="591" y="127" key="FileChooserDialogImpl" timestamp="1588750802544">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585929353944" />
-    <state width="279" height="458" key="GridCell.Tab.2.bottom" timestamp="1585929353944">
+    <state x="591" y="127" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588750802544" />
+    <state width="1493" height="145" key="GridCell.Tab.0.bottom" timestamp="1588755279063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585929353944" />
-    <state width="279" height="458" key="GridCell.Tab.2.center" timestamp="1585929353944">
+    <state width="1493" height="145" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588755279063" />
+    <state width="1493" height="145" key="GridCell.Tab.0.center" timestamp="1588755279063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585929353944" />
-    <state width="279" height="458" key="GridCell.Tab.2.left" timestamp="1585929353944">
+    <state width="1493" height="145" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588755279063" />
+    <state width="1493" height="145" key="GridCell.Tab.0.left" timestamp="1588755279063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585929353944" />
-    <state width="279" height="458" key="GridCell.Tab.2.right" timestamp="1585929353944">
+    <state width="1493" height="145" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588755279063" />
+    <state width="1493" height="145" key="GridCell.Tab.0.right" timestamp="1588755279063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="279" height="458" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585929353944" />
-    <state x="339" y="60" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1585919199248">
+    <state width="1493" height="145" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588755279063" />
+    <state width="495" height="523" key="GridCell.Tab.1.bottom" timestamp="1588755279059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="339" y="60" key="com.intellij.javaee.view.ServerArtifactsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585919199248" />
-    <state x="178" y="0" key="new project wizard" timestamp="1585929348034">
+    <state width="495" height="523" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.1.center" timestamp="1588755279059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1585929348034" />
+    <state width="495" height="523" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.1.left" timestamp="1588755279059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="495" height="523" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.1.right" timestamp="1588755279059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="495" height="523" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.2.bottom" timestamp="1588755279059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="495" height="523" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.2.center" timestamp="1588755279059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="495" height="523" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.2.left" timestamp="1588755279059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="495" height="523" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="495" height="523" key="GridCell.Tab.2.right" timestamp="1588755279059">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="495" height="523" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588755279059" />
+    <state width="350" height="649" key="GridCell.Tab.3.bottom" timestamp="1588739057107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="350" height="649" key="GridCell.Tab.3.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588739057107" />
+    <state width="350" height="649" key="GridCell.Tab.3.center" timestamp="1588739057107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="350" height="649" key="GridCell.Tab.3.center/0.0.1536.824@0.0.1536.824" timestamp="1588739057107" />
+    <state width="350" height="649" key="GridCell.Tab.3.left" timestamp="1588739057107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="350" height="649" key="GridCell.Tab.3.left/0.0.1536.824@0.0.1536.824" timestamp="1588739057107" />
+    <state width="350" height="649" key="GridCell.Tab.3.right" timestamp="1588739057107">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="350" height="649" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1588739057107" />
+    <state x="420" y="0" key="SettingsEditor" timestamp="1588750816121">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="420" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588750816121" />
+    <state x="339" y="60" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1588749597385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="339" y="60" key="com.intellij.javaee.view.ServerArtifactsDialog/0.0.1536.824@0.0.1536.824" timestamp="1588749597385" />
+    <state x="178" y="0" key="new project wizard" timestamp="1588694528768">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1588694528768" />
   </component>
 </project>

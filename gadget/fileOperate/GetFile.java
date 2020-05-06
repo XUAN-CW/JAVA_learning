@@ -27,12 +27,19 @@ public class GetFile {
 	 * 
 	 * @param postfix
 	 */
-	public void selecteByPostfix(String postfix) {
-		//文件名还没有输入的后缀长，直接返回 false
-		//文件名比输入的后缀长，截取文件名最右边与后缀长度相同的子串，进行比较
-		sr = (File f) -> f.getName().length() > postfix.length()
-				? f.getName().substring(f.getName().length() - postfix.length(), f.getName().length()).equals(postfix)
-				: false;
+	public void selecteByPostfix(String... postfixs) {
+		sr = (File f) ->{
+			for (String postfix : postfixs) {
+				//文件名还没有输入的后缀长，直接返回 false
+				//文件名比输入的后缀长，截取文件名最右边与后缀长度相同的子串，进行比较
+				if (f.getName().length() > postfix.length()
+						? f.getName().substring(f.getName().length() - postfix.length(), f.getName().length()).equals(postfix)
+								: false) {
+					return true;
+				}
+			}
+			return false;
+		};	
 	}
 	
 	public void selecteNameEquals(String str) {
@@ -68,10 +75,13 @@ public class GetFile {
 	}
 
 	private void setRoot(String root) {
-
 		this.root = root;
 	}
 
+	/**
+	 * 获取根目录下的所有文件夹
+	 * @return
+	 */
 	public Stack<File> getFolder() {
 		while (!folder.empty()) {
 			folder.pop();
@@ -80,6 +90,10 @@ public class GetFile {
 		return folder;
 	}
 
+	/**
+	 * 获取根目录下的所有文件（不包含文件夹）
+	 * @return
+	 */
 	public Stack<File> getFiles() {
 		while (!files.empty()) {
 			files.pop();

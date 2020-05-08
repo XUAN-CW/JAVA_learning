@@ -48,7 +48,7 @@ public class AndroidCodeEditor extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					String content= txtArea.getText();
 					content=content.replaceAll("keywordstyle", "");
-					content=content.replaceAll("\\n..", "\n");
+					content=content.replaceAll("\\n\\w+", "\n");
 					txtArea.setText(content.substring(2, content.length()));
 				}
 

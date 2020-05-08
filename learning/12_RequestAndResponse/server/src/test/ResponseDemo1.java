@@ -22,17 +22,17 @@ public class ResponseDemo1 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println(new Date());
 
-        Controller c=new Controller(request);
+        Controller c=new Controller(request,response);
         try {
             c.parse();
         }catch (Exception e){
-            c.setResult("failure parse");
+            response.setHeader("status","failure parse");
         }
 
-        OutputStream os=response.getOutputStream();
-        os.write(c.getResult().getBytes());
-        os.flush();
-        os.close();
+//        OutputStream os=response.getOutputStream();
+//        os.write(c.getResult().getBytes());
+//        os.flush();
+//        os.close();
 
 
     }

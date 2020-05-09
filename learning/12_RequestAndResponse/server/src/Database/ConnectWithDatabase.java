@@ -1,11 +1,6 @@
 package Database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.*;
 
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
@@ -30,8 +25,12 @@ public class ConnectWithDatabase {
 
 	public ResultSet myExecuteQuery(String sql){
 		ResultSet rs=null;
+
 		try {
-			rs = ps.executeQuery(sql);
+			//设置结果集可滚动
+			Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+				ResultSet.CONCUR_UPDATABLE);
+			 rs=stmt.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -190,11 +189,11 @@ public class ConnectWithDatabase {
 //
 //		return rs;
 //	}
-	
 
-	
-	String columnDivider="|@_@|\n";
-	String itemDivider="\n|^_^|\n";
+
+
+	String columnDivider="bbbbb";
+	String itemDivider="aaaaa";
 	String emptyResultSet="|-_-!|";
 
 	public void printResultSet(ResultSet rs) {
@@ -211,6 +210,7 @@ public class ConnectWithDatabase {
 						System.out.printf("%-30s", rs.getString(i));
 					}
 				}
+				System.out.println("\n");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -218,7 +218,7 @@ public class ConnectWithDatabase {
 	}
 	
 	public String resultSetToString(ResultSet rs) {
-		String resultString=emptyResultSet;
+		String resultString="";
 		if (rs != null) {
 			ResultSetMetaData rsmd;
 			try {
@@ -231,12 +231,11 @@ public class ConnectWithDatabase {
 				while (rs.next()) {
 					for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 //						System.out.printf("%-15s", rs.getString(i));
-						columns[i-1]+=rs.getString(i)+columnDivider;
+						columns[i-1]+=rs.getString(i)+itemDivider;
 					}
 				}
-				resultString="";
 				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-					resultString+=columns[i-1];
+					resultString+=columns[i-1]+columnDivider;
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

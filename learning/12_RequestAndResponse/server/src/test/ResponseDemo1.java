@@ -23,11 +23,24 @@ public class ResponseDemo1 extends HttpServlet {
         System.out.println(new Date());
 
         Controller c=new Controller(request,response);
+
+//        c.findStudentAssignment("001");
         try {
             c.parse();
         }catch (Exception e){
             response.setHeader("status","failure parse");
         }
+
+
+
+
+
+
+
+
+
+
+
 
 //        OutputStream os=response.getOutputStream();
 //        os.write(c.getResult().getBytes());

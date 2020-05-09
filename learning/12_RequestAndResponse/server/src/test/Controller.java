@@ -38,6 +38,9 @@ public class Controller {
         if (operate.equals("signUp")){
             signUp(request.getHeader("account"),request.getHeader("password"),request.getHeader("identity"));
         }
+        if(operate.equals("find student assignment")){
+            findStudentAssignment(request.getHeader("studentNumber"));
+        }
     }
 
     private void login(String account,String password){
@@ -46,7 +49,7 @@ public class Controller {
                 "`password` FROM students UNION ALL SELECT jobNumber as account," +
                 "`password`  FROM teachers) as a WHERE a.account='"+account+"';");
         System.out.println(account);
-            if(isEmptyResultSet(rs)){
+            if(null!=rs && isEmptyResultSet(rs)){
                 response.addHeader("status","account does not exist");
             } else {
                 try {
@@ -71,7 +74,7 @@ public class Controller {
         ResultSet rs = database.myExecuteQuery(	 "SELECT * FROM (SELECT studentNumber as account," +
                 "`password` FROM students UNION ALL SELECT jobNumber as account," +
                 "`password`  FROM teachers) as a WHERE a.account='"+account+"';");
-        if(isEmptyResultSet(rs)){
+        if(null!=rs&&isEmptyResultSet(rs)){
             if (identity.equals("student")){
                 database.myExecute("INSERT INTO students(studentNumber,`password`) VALUE('"+account+"','"+password+"');");
             }
@@ -84,18 +87,57 @@ public class Controller {
         }
     }
 
+    public void findStudentAssignment(String studentNumber){
+        String sql = "SELECT `name` AS course,title AS homeworkTitle," +
+                "content AS homeworkContent,startTime,deadline FROM assignment " +
+                "JOIN studentLearning ON (studentLearning.studentNumber='"+studentNumber+"'" +
+                " AND assignment.courseNumber=studentLearning.courseNumber) " +
+                "JOIN course ON (course.courseNumber=assignment.courseNumber);";
+        ResultSet rs = database.myExecuteQuery(sql);
+        String temp=database.resultSetToString(rs);
+        System.out.println(temp);
+        response.addHeader("data",temp);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
-     * 遍历时会损失第一行，请提前保存第一行的结果
+     * 结果集的类型要是 ResultSet.TYPE_SCROLL_INSENSITIVE
+     * 结果集可滚动，这样才能在调用 rs.next() 后恢复原样
      * @param rs
-     * @return
+     * @return 默认为空
      */
     private boolean isEmptyResultSet(ResultSet rs){
+        boolean result = true;
         try {
-            return  !rs.next();
+            result=!rs.next();
+            rs.beforeFirst();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return result;
     }
 
     public void setRequest(HttpServletRequest request) {

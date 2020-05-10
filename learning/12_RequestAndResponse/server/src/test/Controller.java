@@ -41,6 +41,9 @@ public class Controller {
         if(operate.equals("find student assignment")){
             findStudentAssignment(request.getHeader("studentNumber"));
         }
+        if(operate.equals("getTeacherAssignment")){
+            getTeacherAssignment(request.getHeader("jobNumber"));
+        }
     }
 
     private void login(String account,String password){
@@ -99,8 +102,15 @@ public class Controller {
         response.addHeader("data",temp);
     }
 
-
-
+    public void getTeacherAssignment(String jobNumber){
+        System.out.println(jobNumber);
+        String sql = "SELECT title,content,course.courseNumber,`name`,assignmentNumber,startTime,deadline " +
+                "FROM course  JOIN assignment ON (course.courseNumber=assignment.courseNumber and jobNumber='"+jobNumber+"');";
+        ResultSet rs = database.myExecuteQuery(sql);
+        String temp=database.resultSetToString(rs);
+        System.out.println(temp);
+        response.addHeader("data",temp);
+    }
 
 
 

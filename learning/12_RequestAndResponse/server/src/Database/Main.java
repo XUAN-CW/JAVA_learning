@@ -10,25 +10,34 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) throws SQLException {
     	ConnectWithDatabase database=new ConnectWithDatabase("47.102.200.197", "root", "XUAN", "assignment");
-        String sql = "SELECT `name` AS course,title AS homeworkTitle," +
-                "content AS homeworkContent,startTime,deadline FROM assignment " +
-                "JOIN studentLearning ON (studentLearning.studentNumber='"+"001"+"'" +
-                " AND assignment.courseNumber=studentLearning.courseNumber) " +
-                "JOIN course ON (course.courseNumber=assignment.courseNumber);";
+
+
+//    	String sql = "SELECT `name` AS course,title AS homeworkTitle," +
+//                "content AS homeworkContent,startTime,deadline FROM assignment " +
+//                "JOIN studentLearning ON (studentLearning.studentNumber='"+"001"+"'" +
+//                " AND assignment.courseNumber=studentLearning.courseNumber) " +
+//                "JOIN course ON (course.courseNumber=assignment.courseNumber);";
+//        ResultSet rs = database.myExecuteQuery(sql);
+////        System.out.println(database.resultSetToString(rs));
+//
+//
+//        String data=database.resultSetToString(rs);
+
+        String sql = "SELECT title,content,course.courseNumber,`name`,assignmentNumber,startTime,deadline " +
+                "FROM course  JOIN assignment ON (course.courseNumber=assignment.courseNumber and jobNumber='"+"101"+"');";
         ResultSet rs = database.myExecuteQuery(sql);
-//        System.out.println(database.resultSetToString(rs));
-
-
         String data=database.resultSetToString(rs);
+        System.out.println(data);
 
         String homeworkTitle[]=null;
         String homeworkContent[]=null;
         String course[]=null;
         String startTime[]=null;
         String deadline[]=null;
-        String columnDivider="\n-----";
-        String itemDivider="\n-___-";
-        String emptyResultSet="|-_-!|";
+        String courseNumber[]=null;
+        String assignmentNumber[]=null;
+        String columnDivider="bbbbb";
+        String itemDivider="aaaaa";
         String[] temp=data.split(columnDivider);
 //        System.out.println(temp[2]);
 
@@ -38,7 +47,7 @@ public class Main {
         for(int i=0;i<temp.length;i++){
 //            System.out.println(temp[i]);
             String[] currColumn=temp[i].split(itemDivider);
-            System.out.println(currColumn[0]);
+            System.err.println(currColumn[0]);
             if(currColumn[0].equals("title")){
                 currColumn[0]="homeworkTitle";
                 homeworkTitle=currColumn;
@@ -57,6 +66,14 @@ public class Main {
             }
             if(currColumn[0].equals("deadline")){
                 currColumn[0]="deadline";
+                deadline=currColumn;
+            }
+            if(currColumn[0].equals("courseNumber")){
+                currColumn[0]="courseNumber";
+                deadline=currColumn;
+            }
+            if(currColumn[0].equals("assignmentNumber")){
+                currColumn[0]="assignmentNumber";
                 deadline=currColumn;
             }
         }

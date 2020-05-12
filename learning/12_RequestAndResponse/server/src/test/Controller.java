@@ -56,6 +56,7 @@ public class Controller {
                 response.addHeader("status","account does not exist");
             } else {
                 try {
+                    rs.next();
                     if (!password.equals(rs.getString(2))){
                         response.addHeader("status","incorrect password");
                     }else {

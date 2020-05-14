@@ -192,8 +192,8 @@ public class ConnectWithDatabase {
 
 
 
-	String columnDivider="bbbbb";
-	String itemDivider="aaaaa";
+	public String columnDivider="bbbbb";
+	public String itemDivider="aaaaa";
 	String emptyResultSet="|-_-!|";
 
 	public void printResultSet(ResultSet rs) {

@@ -5,6 +5,7 @@ import com.mysql.cj.jdbc.result.ResultSetMetaData;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.HttpURLConnection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -27,11 +28,12 @@ public class Controller {
         setRequest(request);
         setResponse(HSResponse);
         setDatabase("47.102.200.197","root","XUAN","assignment");
-        response.addHeader("status","OK");//默认状态码为 OK
+//        response.addHeader("status","OK");//默认状态码为 OK
     }
 
     public void parse(){
         String operate=request.getHeader("operate");
+        System.out.println(operate);
         if (operate.equals("login")){
             login(request.getHeader("account"),request.getHeader("password"));
         }
@@ -43,6 +45,12 @@ public class Controller {
         }
         if(operate.equals("getTeacherAssignment")){
             getTeacherAssignment(request.getHeader("jobNumber"));
+        }
+        if(operate.equals("getTeacherCourse")){
+            getTeacherCourse(request.getHeader("jobNumber"));
+        }
+        if (operate.equals("assignHomework")){
+            assignHomework(request.getHeader("courseNumbers"),request.getHeader("title"),request.getHeader("content"),request.getHeader("deadline"));
         }
     }
 
@@ -115,10 +123,44 @@ public class Controller {
 
 
 
+    public void getTeacherCourse(String jobNumber){
+        System.out.println(jobNumber);
+        String sql = "SELECT courseNumber FROM course WHERE jobNumber='"+jobNumber+"';";
+        ResultSet rs = database.myExecuteQuery(sql);
+        String temp="";
+        System.out.println(temp);
+        try {
+            while (rs.next()) {
+                temp+=rs.getString(1)+database.itemDivider;
+            }
+        }
+        catch (SQLException e) {
+                e.printStackTrace();
+        }
+        System.out.println(temp);
+        response.addHeader("course",temp);
+    }
 
 
+    public void assignHomework( String courseNumbers,  String title,  String content,  String deadline){
+        String[] assign=courseNumbers.split(database.itemDivider);
+//        String sql ="start transaction;";
+        String sql ="";
+        System.out.println("title:"+title);
+        System.out.println("content:"+content);
+        for (int i = 0; i < assign.length; i++) {
+            sql+="INSERT INTO assignment(courseNumber,title,content,startTime,deadline) VALUE " +
+                    "('"+assign[i]+"','"+title+"','"+content+"',NOW(),'"+deadline+"');";
+        }
+//        sql+="commit;";
+        try{
+            System.out.println(sql);
+            database.myExecute(sql);
+        }catch (Exception e){
+            response.setHeader("status","failure");
+        }
 
-
+    }
 
 
 

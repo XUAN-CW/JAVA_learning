@@ -58,6 +58,9 @@ public class Controller {
         if (operate.equals("joinClass")){
             joinClass(request.getHeader("studentNumber"),request.getHeader("courseNumber"));
         }
+        if(operate.equals("createClass")){
+            createClass(request.getHeader("courseNumber"),request.getHeader("name"),request.getHeader("jobNumber"));
+        }
     }
 
     private void login(String account,String password){
@@ -227,7 +230,15 @@ public class Controller {
     }
 
 
-
+    public void createClass(String courseNumber,String name,String jobNumber){
+        String sql="INSERT INTO course(jobNumber,`name`,courseNumber) VALUE('"+courseNumber+"', '"+name+"','"+jobNumber+"');";
+        try{
+            System.out.println(sql);
+            database.myExecute(sql);
+        }catch (Exception e){
+            response.setHeader("status","failure");
+        }
+    }
 
 
 

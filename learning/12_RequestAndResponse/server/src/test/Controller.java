@@ -55,13 +55,21 @@ public class Controller {
         if (operate.equals("updateAssignment")){
             updateAssignment(request.getHeader("assignmentNumber"),request.getHeader("title"),request.getHeader("content"),request.getHeader("deadline"));
         }
+        if (operate.equals("joinClass")){
+            joinClass(request.getHeader("studentNumber"),request.getHeader("courseNumber"));
+        }
     }
 
     private void login(String account,String password){
         //在学生表和教师表中查询账号 account
-        ResultSet rs = database.myExecuteQuery(	 "SELECT * FROM (SELECT studentNumber as account," +
-                "`password` FROM students UNION ALL SELECT jobNumber as account," +
-                "`password`  FROM teachers) as a WHERE a.account='"+account+"';");
+        ResultSet rs = null;
+        try {
+            rs = database.myExecuteQuery(	 "SELECT * FROM (SELECT studentNumber as account," +
+                    "`password` FROM students UNION ALL SELECT jobNumber as account," +
+                    "`password`  FROM teachers) as a WHERE a.account='"+account+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         System.out.println(account);
             if(null!=rs && isEmptyResultSet(rs)){
                 response.addHeader("status","account does not exist");
@@ -89,15 +97,28 @@ public class Controller {
     }
 
     private void signUp(String account,String password,String identity){
-        ResultSet rs = database.myExecuteQuery(	 "SELECT * FROM (SELECT studentNumber as account," +
-                "`password` FROM students UNION ALL SELECT jobNumber as account," +
-                "`password`  FROM teachers) as a WHERE a.account='"+account+"';");
+        ResultSet rs = null;
+        try {
+            rs = database.myExecuteQuery(	 "SELECT * FROM (SELECT studentNumber as account," +
+                    "`password` FROM students UNION ALL SELECT jobNumber as account," +
+                    "`password`  FROM teachers) as a WHERE a.account='"+account+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         if(null!=rs&&isEmptyResultSet(rs)){
             if (identity.equals("student")){
-                database.myExecute("INSERT INTO students(studentNumber,`password`) VALUE('"+account+"','"+password+"');");
+                try {
+                    database.myExecute("INSERT INTO students(studentNumber,`password`) VALUE('"+account+"','"+password+"');");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
             if (identity.equals("teacher")){
-                database.myExecute("INSERT INTO teachers(jobNumber,`password`) VALUE('"+account+"','"+password+"');");
+                try {
+                    database.myExecute("INSERT INTO teachers(jobNumber,`password`) VALUE('"+account+"','"+password+"');");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
         else {
@@ -111,7 +132,12 @@ public class Controller {
                 "JOIN studentLearning ON (studentLearning.studentNumber='"+studentNumber+"'" +
                 " AND assignment.courseNumber=studentLearning.courseNumber) " +
                 "JOIN course ON (course.courseNumber=assignment.courseNumber);";
-        ResultSet rs = database.myExecuteQuery(sql);
+        ResultSet rs = null;
+        try {
+            rs = database.myExecuteQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         String temp=database.resultSetToString(rs);
         System.out.println(temp);
         response.addHeader("data",temp);
@@ -121,7 +147,12 @@ public class Controller {
         System.out.println(jobNumber);
         String sql = "SELECT title,content,course.courseNumber,`name`,assignmentNumber,startTime,deadline " +
                 "FROM course  JOIN assignment ON (course.courseNumber=assignment.courseNumber and jobNumber='"+jobNumber+"');";
-        ResultSet rs = database.myExecuteQuery(sql);
+        ResultSet rs = null;
+        try {
+            rs = database.myExecuteQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         String temp=database.resultSetToString(rs);
         System.out.println(temp);
         response.addHeader("data",temp);
@@ -132,7 +163,12 @@ public class Controller {
     public void getTeacherCourse(String jobNumber){
         System.out.println(jobNumber);
         String sql = "SELECT courseNumber FROM course WHERE jobNumber='"+jobNumber+"';";
-        ResultSet rs = database.myExecuteQuery(sql);
+        ResultSet rs = null;
+        try {
+            rs = database.myExecuteQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         String temp="";
         System.out.println(temp);
         try {
@@ -180,6 +216,15 @@ public class Controller {
 
 
 
+    public  void joinClass( String studentNumber,  String courseNumber) {
+        String sql="INSERT INTO studentLearning(studentNumber,courseNumber) VALUE('"+studentNumber+"', '"+courseNumber+"');";
+        try{
+            System.out.println(sql);
+            database.myExecute(sql);
+        }catch (Exception e){
+            response.setHeader("status","failure");
+        }
+    }
 
 
 
@@ -189,13 +234,12 @@ public class Controller {
 
 
 
-
-    /**
-     * 结果集的类型要是 ResultSet.TYPE_SCROLL_INSENSITIVE
-     * 结果集可滚动，这样才能在调用 rs.next() 后恢复原样
-     * @param rs
-     * @return 默认为空
-     */
+        /**
+         * 结果集的类型要是 ResultSet.TYPE_SCROLL_INSENSITIVE
+         * 结果集可滚动，这样才能在调用 rs.next() 后恢复原样
+         * @param rs
+         * @return 默认为空
+         */
     private boolean isEmptyResultSet(ResultSet rs){
         boolean result = true;
         try {

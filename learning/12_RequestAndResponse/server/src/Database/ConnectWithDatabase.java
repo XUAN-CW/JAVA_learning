@@ -23,27 +23,18 @@ public class ConnectWithDatabase {
 	}
 
 
-	public ResultSet myExecuteQuery(String sql){
+	public ResultSet myExecuteQuery(String sql) throws SQLException {
 		ResultSet rs=null;
 
-		try {
 			//设置结果集可滚动
 			Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
 				ResultSet.CONCUR_UPDATABLE);
 			 rs=stmt.executeQuery(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 		return rs;
 	}
 
-	public void myExecute(String sql){
-		try {
+	public void myExecute(String sql) throws SQLException {
 			ps.execute(sql);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	

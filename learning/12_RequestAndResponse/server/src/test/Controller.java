@@ -74,10 +74,12 @@ public class Controller {
                         rs=database.myExecuteQuery("SELECT * FROM students WHERE " +
                                 "studentNumber='"+account+"';");
                         database.printResultSet(rs);
+                        System.out.println(isEmptyResultSet(rs));
                         if (isEmptyResultSet(rs)){
                             response.addHeader("identity","teacher");
                         }else {
                             response.addHeader("identity","student");
+                            System.out.println("student");
                         }
                     }
                 } catch (SQLException e) {
@@ -197,6 +199,7 @@ public class Controller {
     private boolean isEmptyResultSet(ResultSet rs){
         boolean result = true;
         try {
+            rs.beforeFirst();
             result=!rs.next();
             rs.beforeFirst();
         } catch (SQLException e) {

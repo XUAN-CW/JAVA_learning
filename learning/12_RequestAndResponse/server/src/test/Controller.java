@@ -189,18 +189,19 @@ public class Controller {
 
     public void assignHomework( String courseNumbers,  String title,  String content,  String deadline){
         String[] assign=courseNumbers.split(database.itemDivider);
-//        String sql ="start transaction;";
         String sql ="";
         System.out.println("title:"+title);
         System.out.println("content:"+content);
-        for (int i = 0; i < assign.length; i++) {
-            sql+="INSERT INTO assignment(courseNumber,title,content,startTime,deadline) VALUE " +
-                    "('"+assign[i]+"','"+title+"','"+content+"',NOW(),'"+deadline+"');";
-        }
-//        sql+="commit;";
+
         try{
-            System.out.println(sql);
-            database.myExecute(sql);
+            database.myExecute("start transaction;");
+            for (int i = 0; i < assign.length; i++) {
+                sql="INSERT INTO assignment(courseNumber,title,content,startTime,deadline) VALUE " +
+                        "('"+assign[i]+"','"+title+"','"+content+"',NOW(),'"+deadline+"');";
+                database.myExecute(sql);
+            }
+            database.myExecute("commit;");
+
         }catch (Exception e){
             response.setHeader("status","failure");
         }

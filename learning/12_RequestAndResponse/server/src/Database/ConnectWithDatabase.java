@@ -25,7 +25,7 @@ public class ConnectWithDatabase {
 
 	public ResultSet myExecuteQuery(String sql) throws SQLException {
 		ResultSet rs=null;
-
+		System.out.println(sql);
 			//设置结果集可滚动
 			Statement stmt=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
 				ResultSet.CONCUR_UPDATABLE);
@@ -34,6 +34,7 @@ public class ConnectWithDatabase {
 	}
 
 	public void myExecute(String sql) throws SQLException {
+		System.out.println(sql);
 			ps.execute(sql);
 	}
 

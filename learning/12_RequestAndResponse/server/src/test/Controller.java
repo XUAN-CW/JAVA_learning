@@ -28,7 +28,7 @@ public class Controller {
         setRequest(request);
         setResponse(HSResponse);
         setDatabase("47.102.200.197","root","XUAN","assignment");
-//        response.addHeader("status","OK");//默认状态码为 OK
+        response.addHeader("status","OK");//默认状态码为 OK
     }
 
     public void parse(){
@@ -52,6 +52,9 @@ public class Controller {
         if (operate.equals("assignHomework")){
             assignHomework(request.getHeader("courseNumbers"),request.getHeader("title"),request.getHeader("content"),request.getHeader("deadline"));
         }
+        if (operate.equals("updateAssignment")){
+            updateAssignment(request.getHeader("assignmentNumber"),request.getHeader("title"),request.getHeader("content"),request.getHeader("deadline"));
+        }
     }
 
     private void login(String account,String password){
@@ -70,6 +73,7 @@ public class Controller {
                     }else {
                         rs=database.myExecuteQuery("SELECT * FROM students WHERE " +
                                 "studentNumber='"+account+"';");
+                        database.printResultSet(rs);
                         if (isEmptyResultSet(rs)){
                             response.addHeader("identity","teacher");
                         }else {
@@ -162,7 +166,15 @@ public class Controller {
 
     }
 
-
+    public void updateAssignment( String assignmentNumber,  String title,  String content,  String deadline){
+        String sql="update assignment set title='"+title+"',content='"+content+"',deadline='"+deadline+"' WHERE assignmentNumber='"+assignmentNumber+"';";
+        try{
+            System.out.println(sql);
+            database.myExecute(sql);
+        }catch (Exception e){
+            response.setHeader("status","failure");
+        }
+    }
 
 
 

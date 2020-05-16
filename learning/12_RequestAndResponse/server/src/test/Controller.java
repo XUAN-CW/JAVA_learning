@@ -133,11 +133,12 @@ public class Controller {
     }
 
     public void findStudentAssignment(String studentNumber){
-        String sql = "SELECT `name` AS course,title AS homeworkTitle," +
-                "content AS homeworkContent,startTime,deadline FROM assignment " +
-                "JOIN studentLearning ON (studentLearning.studentNumber='"+studentNumber+"'" +
-                " AND assignment.courseNumber=studentLearning.courseNumber) " +
-                "JOIN course ON (course.courseNumber=assignment.courseNumber);";
+        String sql = "SELECT DISTINCT assignmentNumber,`name` AS course,title AS homeworkTitle," +
+                "content AS homeworkContent,startTime,deadline FROM assignment JOIN " +
+                "studentLearning ON (studentLearning.studentNumber='"+studentNumber+"' AND " +
+                "assignment.courseNumber=studentLearning.courseNumber) JOIN " +
+                "course ON (course.courseNumber=assignment.courseNumber)ORDER BY " +
+                "assignmentNumber ASC;";
         ResultSet rs = null;
         try {
             rs = database.myExecuteQuery(sql);

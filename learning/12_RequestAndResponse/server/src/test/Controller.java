@@ -64,6 +64,9 @@ public class Controller {
         if(operate.equals("deleteAssignment")){
             deleteAssignment(request.getHeader("assignmentNumber"));
         }
+        if(operate.equals("countTheNumberOfHomework")){
+            countTheNumberOfHomework(request.getHeader("studentNumber"));
+        }
     }
 
     private void login(String account,String password){
@@ -170,21 +173,16 @@ public class Controller {
     public void getTeacherCourse(String jobNumber){
         System.out.println(jobNumber);
         String sql = "SELECT courseNumber FROM course WHERE jobNumber='"+jobNumber+"';";
+        String temp="";
         ResultSet rs = null;
         try {
             rs = database.myExecuteQuery(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        String temp="";
-        System.out.println(temp);
-        try {
+            System.out.println(temp);
             while (rs.next()) {
                 temp+=rs.getString(1)+database.itemDivider;
             }
-        }
-        catch (SQLException e) {
-                e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         System.out.println(temp);
         response.addHeader("course",temp);
@@ -253,6 +251,26 @@ public class Controller {
         }
     }
 
+    public void countTheNumberOfHomework(final String studentNumber){
+        System.out.println(studentNumber);
+        String sql = "SELECT courseNumber,course,COUNT(*) FROM ( SELECT DISTINCT assignmentNumber," +
+                "course.courseNumber,`name` AS course,title AS homeworkTitle,content AS homeworkContent," +
+                "startTime,deadline FROM assignment JOIN studentLearning ON (studentLearning.studentNumber" +
+                "='"+studentNumber+"' AND assignment.courseNumber=studentLearning.courseNumber) JOIN course ON " +
+                "(course.courseNumber=assignment.courseNumber)) as aa GROUP BY courseNumber,aa.course;";
+        String temp="";
+        ResultSet rs = null;
+        try {
+            rs = database.myExecuteQuery(sql);
+            while (rs.next()) {
+                temp+=rs.getString(2)+":"+rs.getInt(3)+database.itemDivider;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(temp);
+        response.addHeader("statisticalResult",temp);
+    }
 
 
 

@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 /**
  *
@@ -20,12 +21,18 @@ import org.apache.http.util.EntityUtils;
 
 public class SimplyCrawlTheHTML {
 
-    public static void main(String[] args) {
+    /**
+     *
+     * @param url
+     * @return
+     */
+    public static String getHTML(String url){
+        String html=null;
         //1.生成httpclient，相当于该打开一个浏览器
         CloseableHttpClient httpClient = HttpClients.createDefault();
         CloseableHttpResponse response = null;
         //2.创建get请求，相当于在浏览器地址栏输入网址
-        HttpGet request = new HttpGet("https://www.cnblogs.com/");
+        HttpGet request = new HttpGet(url);
         try {
             //3.执行get请求，相当于在输入地址栏后敲回车键
             response = httpClient.execute(request);
@@ -34,12 +41,12 @@ public class SimplyCrawlTheHTML {
             if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 //5.获取响应内容
                 HttpEntity httpEntity = response.getEntity();
-                String html = EntityUtils.toString(httpEntity, "utf-8");
-                System.out.println(html);
+                html = EntityUtils.toString(httpEntity, "utf-8");
+//                System.out.println(html);
             } else {
                 //如果返回状态不是200，比如404（页面不存在）等，根据情况做处理，这里略
                 System.out.println("返回状态不是200");
-                System.out.println(EntityUtils.toString(response.getEntity(), "utf-8"));
+//                System.out.println(EntityUtils.toString(response.getEntity(), "utf-8"));
             }
         } catch (ClientProtocolException e) {
             e.printStackTrace();
@@ -50,5 +57,30 @@ public class SimplyCrawlTheHTML {
             HttpClientUtils.closeQuietly(response);
             HttpClientUtils.closeQuietly(httpClient);
         }
+        return html;
+    }
+
+    public static void main(String[] args) {
+        String rootOfHTML="./allHTML";//HTML 根目录
+        File allHTML=new File(rootOfHTML);
+        if (!allHTML.exists()){
+            allHTML.mkdir();
+        }
+        for (int i=0;i<20000;i++){
+            String currentChildDirectory=rootOfHTML+"/"+i/500;//每个子目录下最多有 500 个 HTML 文件
+            File file = new File(currentChildDirectory);
+            if (!file.exists()){
+                file.mkdir();
+            }
+
+            System.out.println("http://acgheaven.cc/archives/"+i);
+            String html=getHTML("http://acgheaven.cc/archives/"+i);
+            System.out.println(html);
+            if (null!=html){
+                SaveAndRead saveAndRead=new SaveAndRead();
+                saveAndRead.save(currentChildDirectory+"/"+i+".html", html);
+            }
+        }
+
     }
 }

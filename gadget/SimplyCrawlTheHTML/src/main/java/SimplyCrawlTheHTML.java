@@ -27,6 +27,7 @@ public class SimplyCrawlTheHTML {
      * @return
      */
     public static String getHTML(String url){
+        System.out.println("当前 url: "+url);
         String html=null;
         //1.生成httpclient，相当于该打开一个浏览器
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -68,17 +69,18 @@ public class SimplyCrawlTheHTML {
         }
         for (int i=0;i<20000;i++){
             String currentChildDirectory=rootOfHTML+"/"+i/500;//每个子目录下最多有 500 个 HTML 文件
-            File file = new File(currentChildDirectory);
-            if (!file.exists()){
-                file.mkdir();
+            File ccd = new File(currentChildDirectory);
+            if (!ccd.exists()){
+                ccd.mkdir();
             }
-
-            System.out.println("http://acgheaven.cc/archives/"+i);
-            String html=getHTML("http://acgheaven.cc/archives/"+i);
+            String url="http://acgheaven.cc/archives/"+i;
+            String html=getHTML(url);
             System.out.println(html);
             if (null!=html){
                 SaveAndRead saveAndRead=new SaveAndRead();
-                saveAndRead.save(currentChildDirectory+"/"+i+".html", html);
+                String currentFile=currentChildDirectory+"/"+i+".html";
+                saveAndRead.save(currentFile, html);
+                System.out.println("保存 "+url+" 到 "+currentFile);
             }
         }
 

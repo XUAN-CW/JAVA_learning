@@ -37,7 +37,6 @@ public class SimplyCrawlTheHTML {
         try {
             //3.执行get请求，相当于在输入地址栏后敲回车键
             response = httpClient.execute(request);
-
             //4.判断响应状态为200，进行处理
             if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 //5.获取响应内容
@@ -67,19 +66,31 @@ public class SimplyCrawlTheHTML {
         if (!allHTML.exists()){
             allHTML.mkdir();
         }
-        for (int i=0;i<20000;i++){
+        for (int i=30000;i>0;i--){
+            String url="http://acgheaven.cc/archives/"+i;
+
             String currentChildDirectory=rootOfHTML+"/"+i/500;//每个子目录下最多有 500 个 HTML 文件
+            String currentFile=currentChildDirectory+"/"+i+".html";
             File ccd = new File(currentChildDirectory);
+            File cFile=new File(currentFile);
+
             if (!ccd.exists()){
                 ccd.mkdir();
             }
-            String url="http://acgheaven.cc/archives/"+i;
+            if (cFile.exists()){
+                continue;
+            }
+
             String html=getHTML(url);
-            System.out.println(html);
+//            System.out.println(html);
             if (null!=html){
+                //去除不需要的页面
+                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")){
+                    continue;
+                }
+                System.out.println(html);
                 SaveAndRead saveAndRead=new SaveAndRead();
-                String currentFile=currentChildDirectory+"/"+i+".html";
-                saveAndRead.save(currentFile, html);
+                saveAndRead.save(cFile.getPath(), html);
                 System.out.println("保存 "+url+" 到 "+currentFile);
             }
         }

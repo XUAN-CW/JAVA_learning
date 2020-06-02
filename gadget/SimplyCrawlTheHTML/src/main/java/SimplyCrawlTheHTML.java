@@ -37,6 +37,7 @@ public class SimplyCrawlTheHTML {
         try {
             //3.执行get请求，相当于在输入地址栏后敲回车键
             response = httpClient.execute(request);
+            response.addHeader("currentURL",url);
             //4.判断响应状态为200，进行处理
             if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 //5.获取响应内容
@@ -60,47 +61,70 @@ public class SimplyCrawlTheHTML {
         return html;
     }
 
+    /**
+     * 判断给定的百度云链接是否可用
+     * @param url
+     * @return
+     */
+    public boolean isAvailableOnBaiduCloudLink(String url){
+        boolean available=false;
+        String html=getHTML(url);
+        if(html.contains("请输入提取码")&&html.contains("提取文件")){
+            available=true;
+        }
+        return available;
+    }
+
     public static void main(String[] args) {
+        //创建根目录////////////////////////////////////////////
         String rootOfHTML="./allHTML";//HTML 根目录
         File allHTML=new File(rootOfHTML);
         if (!allHTML.exists()){
             allHTML.mkdir();
         }
-        for (int i=8888880,j=0;i>0;i++){
+        for (int i=0,j=0;i<20000000;i++){
+            //创建子目录、查看当前 HTML 文件是否已下载////////////////////////////
             String url="http://acgheaven.cc/archives/"+i;
-
-            String currentChildDirectory=rootOfHTML+"/"+i/500;//每个子目录下最多有 500 个 HTML 文件
-            String currentFile=currentChildDirectory+"/"+i+".html";
-            File ccd = new File(currentChildDirectory);
-            File cFile=new File(currentFile);
-
-            if (!ccd.exists()){
-                ccd.mkdir();
+            String currentChildDirectoryPath=rootOfHTML+"/"+i/100;//每个子目录下最多有 500 个 HTML 文件
+            String currentFileName= "["+i+"]" +".html";
+            String currentFilePath=currentChildDirectoryPath+"/"+currentFileName;
+            File currentChildDirectory = new File(currentChildDirectoryPath);
+            File currentFile=new File(currentFilePath);
+            if (!currentChildDirectory.exists()){
+                currentChildDirectory.mkdir();
             }
-            if (cFile.exists()){
+            if (currentFile.exists()){
                 continue;
             }
-
+            //爬取页面///////////////////////////////////////////////////////
             String html=getHTML(url);
-//            System.out.println(html);
             if (null!=html){
                 //去除不需要的页面
-                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&&102281==html.length()){
-                    j++;
-                    if (j>500){
-                        break;
-                    }
-                    continue;
-                }
-                else {//重新计数
-                    j=0;
-                }
+//                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&& html.contains("http://acgheaven.cc/wp-content/uploads/2019/01/5fc20e57da7d49d5d9889bed885cb96d-800x500.jpg")){
+//                    j++;
+//                    if (j>500){
+//                        break;
+//                    }
+//                    continue;
+//                }
+//                else {//重新计数
+//                    j=0;
+//                }
+                //保存页面////////////////////////////////////////////////////
                 System.out.println(html);
+                //用文件名区分文件
+                if (true){
+                    //去掉 .html 后缀
+                    currentFileName=currentFileName.substring(0,currentFileName.length()-5);
+                    //把后缀加回来
+                    currentFileName+=".html";
+                }
                 SaveAndRead saveAndRead=new SaveAndRead();
-                saveAndRead.save(cFile.getPath(), html);
-                System.out.println("保存 "+url+" 到 "+currentFile);
+                String currentURL="currentURL";
+                currentFilePath=currentChildDirectoryPath+"/"+currentFileName;
+                saveAndRead.save(currentFilePath, html+currentURL+url+currentURL);
+                System.out.println("保存 "+url+" 到 "+currentFilePath);
             }
         }
-
     }
 }

@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 /**
  *
  * 参考：
@@ -27,7 +29,7 @@ public class SimplyCrawlTheHTML {
      * @return
      */
     public static String getHTML(String url){
-        System.out.println("当前 url: "+url);
+//        System.out.println("当前 url: "+url);
         String html=null;
         //1.生成httpclient，相当于该打开一个浏览器
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -66,10 +68,10 @@ public class SimplyCrawlTheHTML {
      * @param url
      * @return
      */
-    public boolean isAvailableOnBaiduCloudLink(String url){
+    public static boolean isAvailableOnBaiduCloudLink(String url){
         boolean available=false;
         String html=getHTML(url);
-        if(html.contains("请输入提取码")&&html.contains("提取文件")){
+        if(html.contains("请输入提取码")){
             available=true;
         }
         return available;
@@ -82,7 +84,7 @@ public class SimplyCrawlTheHTML {
         if (!allHTML.exists()){
             allHTML.mkdir();
         }
-        for (int i=0,j=0;i<20000000;i++){
+        for (int i=8777,j=0;i<10000;i++){
             //创建子目录、查看当前 HTML 文件是否已下载////////////////////////////
             String url="http://acgheaven.cc/archives/"+i;
             String currentChildDirectoryPath=rootOfHTML+"/"+i/100;//每个子目录下最多有 500 个 HTML 文件
@@ -99,32 +101,70 @@ public class SimplyCrawlTheHTML {
             //爬取页面///////////////////////////////////////////////////////
             String html=getHTML(url);
             if (null!=html){
-                //去除不需要的页面
-//                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&& html.contains("http://acgheaven.cc/wp-content/uploads/2019/01/5fc20e57da7d49d5d9889bed885cb96d-800x500.jpg")){
-//                    j++;
-//                    if (j>500){
-//                        break;
-//                    }
-//                    continue;
-//                }
-//                else {//重新计数
-//                    j=0;
-//                }
+//                去除不需要的页面
+                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&& html.contains("http://acgheaven.cc/wp-content/uploads/2019/01/5fc20e57da7d49d5d9889bed885cb96d-800x500.jpg")){
+                    j++;
+                    if (j>500){
+                        break;
+                    }
+                    continue;
+                }
+                else {//重新计数
+                    j=0;
+                }
                 //保存页面////////////////////////////////////////////////////
-                System.out.println(html);
-                //用文件名区分文件
+//                System.out.println(html);
+                //用文件名区分文件百度云链接可用的加上 [百度云可用]///////////////////////////
                 if (true){
                     //去掉 .html 后缀
                     currentFileName=currentFileName.substring(0,currentFileName.length()-5);
+                    //匹配所有网址
+                    String regEx = "(http|ftp|https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%&:/~\\+#]*[\\w\\-\\@?^=%&/~\\+#])?";
+                    Pattern p = Pattern.compile(regEx);
+                    Matcher m = p.matcher(html);
+                    String lastURL="";
+                    while (m.find()) {
+
+                        String baiduCloudLink=m.group();
+
+                        if (null!=baiduCloudLink){
+                            //找出百度云链接
+                            if (baiduCloudLink.contains("pan.baidu.com")){
+                                if (lastURL.equals(baiduCloudLink)){
+                                    boolean available=isAvailableOnBaiduCloudLink(baiduCloudLink);
+                                    if (available){
+                                        currentFileName+="[百度云可用]";
+//                                        找出此 HTML 的描述
+                                        String findDescription="<meta name=\"description\"([^>])+>";
+                                        Pattern pFind = Pattern.compile(findDescription);
+                                        Matcher mFind = pFind.matcher(html);
+                                        while (mFind.find()) {
+                                            String description=mFind.group();
+                                            if (null!=description){
+                                                AppendToFile.appendContentToFile("description.txt",
+                                                        "↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n"+url
+                                                                +"\n"+description+"\n↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n\n\n");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            lastURL=baiduCloudLink;
+                        }
+                    }
                     //把后缀加回来
                     currentFileName+=".html";
                 }
+                //保存文件////////////////////////////////////////////////////////////////
                 SaveAndRead saveAndRead=new SaveAndRead();
                 String currentURL="currentURL";
                 currentFilePath=currentChildDirectoryPath+"/"+currentFileName;
                 saveAndRead.save(currentFilePath, html+currentURL+url+currentURL);
-                System.out.println("保存 "+url+" 到 "+currentFilePath);
+//                System.out.println("保存 "+url+" 到 "+currentFilePath);
             }
         }
     }
+
+
+
 }

@@ -66,7 +66,7 @@ public class SimplyCrawlTheHTML {
         if (!allHTML.exists()){
             allHTML.mkdir();
         }
-        for (int i=30000;i>0;i--){
+        for (int i=8888880,j=0;i>0;i++){
             String url="http://acgheaven.cc/archives/"+i;
 
             String currentChildDirectory=rootOfHTML+"/"+i/500;//每个子目录下最多有 500 个 HTML 文件
@@ -85,8 +85,15 @@ public class SimplyCrawlTheHTML {
 //            System.out.println(html);
             if (null!=html){
                 //去除不需要的页面
-                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")){
+                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&&102281==html.length()){
+                    j++;
+                    if (j>500){
+                        break;
+                    }
                     continue;
+                }
+                else {//重新计数
+                    j=0;
                 }
                 System.out.println(html);
                 SaveAndRead saveAndRead=new SaveAndRead();

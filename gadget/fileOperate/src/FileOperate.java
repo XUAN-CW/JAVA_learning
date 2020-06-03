@@ -3,15 +3,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class FileOperate {
-    public void copy(String sourceFile,String destinationDir) {
+    public void copy(File sourceFile,String destinationDir) {
         //获取源文件的名称
-        String sourceFileName = sourceFile.substring(sourceFile.lastIndexOf("\\") + 1); //源文件名
-        destinationDir = destinationDir + File.separator + sourceFileName; //目标地址
+        String destination = destinationDir + File.separator + sourceFile.getName(); //目标地址
 
         try {
             //创建输入输出流对象
             FileInputStream fis = new FileInputStream(sourceFile);
-            FileOutputStream fos = new FileOutputStream(destinationDir);
+            FileOutputStream fos = new FileOutputStream(destination);
             //创建搬运工具
             byte datas[] = new byte[1024 * 8];
             //创建长度
@@ -23,6 +22,7 @@ public class FileOperate {
             //3.释放资源
             fis.close();
             fos.close();
+            System.out.println(sourceFile+"→"+destinationDir);
         } catch (Exception e) {
             e.printStackTrace();
         }

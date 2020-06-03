@@ -29,7 +29,7 @@ public class SaveAndRead {
 		else {
 			try {
 				newFile.createNewFile();
-				System.out.println("文件已创建");
+				System.out.println(path+"文件已创建");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

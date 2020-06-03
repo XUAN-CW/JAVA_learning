@@ -29,7 +29,7 @@ public class SimplyCrawlTheHTML {
      * @return
      */
     public static String getHTML(String url){
-//        System.out.println("当前 url: "+url);
+        System.out.println("当前 url: "+url);
         String html=null;
         //1.生成httpclient，相当于该打开一个浏览器
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -84,7 +84,7 @@ public class SimplyCrawlTheHTML {
         if (!allHTML.exists()){
             allHTML.mkdir();
         }
-        for (int i=8777,j=0;i<10000;i++){
+        for (int i=20001,j=0;i<=30000;i++){
             //创建子目录、查看当前 HTML 文件是否已下载////////////////////////////
             String url="http://acgheaven.cc/archives/"+i;
             String currentChildDirectoryPath=rootOfHTML+"/"+i/100;//每个子目录下最多有 500 个 HTML 文件
@@ -101,17 +101,17 @@ public class SimplyCrawlTheHTML {
             //爬取页面///////////////////////////////////////////////////////
             String html=getHTML(url);
             if (null!=html){
-//                去除不需要的页面
-                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&& html.contains("http://acgheaven.cc/wp-content/uploads/2019/01/5fc20e57da7d49d5d9889bed885cb96d-800x500.jpg")){
-                    j++;
-                    if (j>500){
-                        break;
-                    }
-                    continue;
-                }
-                else {//重新计数
-                    j=0;
-                }
+////                去除不需要的页面
+//                if (html.contains("<title>绅士天堂-ACG绅士天堂</title>")&& html.contains("http://acgheaven.cc/wp-content/uploads/2019/01/5fc20e57da7d49d5d9889bed885cb96d-800x500.jpg")){
+//                    j++;
+//                    if (j>500){
+//                        break;
+//                    }
+//                    continue;
+//                }
+//                else {//重新计数
+//                    j=0;
+//                }
                 //保存页面////////////////////////////////////////////////////
 //                System.out.println(html);
                 //用文件名区分文件百度云链接可用的加上 [百度云可用]///////////////////////////
@@ -135,16 +135,24 @@ public class SimplyCrawlTheHTML {
                                     if (available){
                                         currentFileName+="[百度云可用]";
 //                                        找出此 HTML 的描述
-                                        String findDescription="<meta name=\"description\"([^>])+>";
+                                        String findDescription="meta name=\"description\"([^>])+";
                                         Pattern pFind = Pattern.compile(findDescription);
                                         Matcher mFind = pFind.matcher(html);
+                                        String lastURLWhichContainsDescription="lastURLWhichContainsDescription";
                                         while (mFind.find()) {
                                             String description=mFind.group();
                                             if (null!=description){
-                                                AppendToFile.appendContentToFile("description.txt",
-                                                        "↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n"+url
-                                                                +"\n"+description+"\n↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n\n\n");
+                                                if (!lastURLWhichContainsDescription.equals(url)){
+//                                                    AppendToFile.appendContentToFile("description.txt",
+//                                                            "↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\n"+"原网页："+url
+//                                                                    +"\n"+description+"\n↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n\n\n");
+                                                    String linkItem= "\n原网页："+url+
+                                                            "\n"+description+"\n\n"+"------";
+                                                    AppendToFile.appendContentToFile("description.md",linkItem);
+
+                                                }
                                             }
+                                            lastURLWhichContainsDescription=url;
                                         }
                                     }
                                 }

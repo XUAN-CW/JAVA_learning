@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * 调用 startEdit() 开始编辑
  */
 
-public class ContentEditor {
+public class TextEditor {
 	// 这个接口是为lambda表达式准备的，就不写在外面了
 	interface Editor {
 		String edit(String content);
@@ -22,7 +22,7 @@ public class ContentEditor {
 
 	File file;
 
-	public ContentEditor(File editedFile) {
+	public TextEditor(File editedFile) {
 		setFile(editedFile);
 	}
 

@@ -3,7 +3,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 警告：谨慎使用！程序一旦运行，便不可撤回！注意路径的填写！ 遇到的问题：转义问题 <=> 解决方法：在字符前加 【\\】 描述：重命名文件
+ * 用途：本类用于文件重命名，创建本类时指定文件，
+ * 警告：谨慎使用！程序一旦运行，便不可撤回！注意路径的填写！
+ * 遇到的问题：转义问题 <=> 解决方法：在字符前加 【\\】
  * 来源：https://www.cnblogs.com/CodeKjm/p/9615815.html
  */
 
@@ -12,9 +14,9 @@ public class Rename {
 		String rename(String oldName);
 	}
 
-	private File file;// 此程序会递归遍历此目录下所有文件,记得修改为你电脑上的文件所在路径
+	private File file;// 要重命名的文件
 
-	public Rename(File file) {
+	public Rename(File file) throws Exception {
 		setFile(file);
 	}
 
@@ -139,7 +141,17 @@ public class Rename {
 		}
 	}
 
-	public void setFile(File file) {
+	/**
+	 * 这里进行文件检测，如果确保文件可用
+	 * @param file 传入的参数不为空，且确保文件可用
+	 */
+	public void setFile(File  file) throws Exception {
+		if (null==file){
+			throw new NullPointerException();
+		}
+		if (!file.exists()){
+			throw new Exception("文件不存在");
+		}
 		this.file = file;
 	}
 

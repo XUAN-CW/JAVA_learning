@@ -17,7 +17,7 @@ public class AndroidCodeEditor extends JFrame{
 	
 	public  AndroidCodeEditor (){
 			super();
-			setTitle("键盘输入模拟器1.0");
+			setTitle("安卓代码整理");
 			setBounds(100, 100, 450, 300);
 			setLocationRelativeTo(null);	//窗体居中出现
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

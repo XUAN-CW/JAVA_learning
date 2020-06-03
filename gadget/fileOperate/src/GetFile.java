@@ -23,7 +23,7 @@ public class GetFile {
 	/**
 	 * 根据后缀选择
 	 * 
-	 * @param postfix
+	 * @param postfixs
 	 */
 	public void selecteByPostfix(String... postfixs) {
 		sr = (File f) ->{

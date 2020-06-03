@@ -1,5 +1,3 @@
-package fileOperate;
-
 import java.io.File;
 import java.util.Stack;
 

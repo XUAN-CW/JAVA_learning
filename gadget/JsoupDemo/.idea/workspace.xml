@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa8cf8a1-3455-403c-804b-1631211552b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../fileOperate/src/FileOperate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fileOperate/src/FileOperate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fileOperate/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fileOperate/src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1dRfvXK6tXf6n5gZJZAKbzsJxth" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="E:/courseManagement/courseManagementServer" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="JsoupDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JsoupDemo" />
+      <module name="JsoupDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JsoupDemo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa8cf8a1-3455-403c-804b-1631211552b6" name="Default Changelist" comment="" />
+      <created>1592393056938</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592393056938</updated>
+      <workItem from="1592393060095" duration="4437000" />
+      <workItem from="1592398626462" duration="600000" />
+      <workItem from="1592535674059" duration="57000" />
+      <workItem from="1594131313167" duration="3631000" />
+      <workItem from="1594348611348" duration="1060000" />
+      <workItem from="1594470055533" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="74" key="#Project_Structure" timestamp="1592393081274">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1592393081274" />
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1594470068318">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594470068318" />
+    <state width="1493" height="336" key="GridCell.Tab.0.bottom" timestamp="1594134978781">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="336" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594134978781" />
+    <state width="1493" height="336" key="GridCell.Tab.0.center" timestamp="1594134978781">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="336" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594134978781" />
+    <state width="1493" height="336" key="GridCell.Tab.0.left" timestamp="1594134978781">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="336" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594134978781" />
+    <state width="1493" height="336" key="GridCell.Tab.0.right" timestamp="1594134978781">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="336" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594134978781" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1594131669686">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594131669686" />
+  </component>
+</project>

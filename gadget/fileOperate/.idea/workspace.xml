@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da9dc7a6-0fd2-4f54-a8d8-6f61c5c91b1a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/RegexDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saveAndRead/SaveAndRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileOperate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileOperate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JsoupDemo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JsoupDemo/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JsoupDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JsoupDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JsoupDemo/src/main/java/JsoupDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JsoupDemo/src/main/java/JsoupDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JsoupDemo/target/classes/JsoupDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JsoupDemo/target/classes/JsoupDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,14 +42,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SimplyCrawlTheHTML" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -106,11 +108,15 @@
       <workItem from="1592311382938" duration="15000" />
       <workItem from="1592311427529" duration="47000" />
       <workItem from="1592311670436" duration="223000" />
+      <workItem from="1598547378618" duration="775000" />
+      <workItem from="1598579883760" duration="347000" />
+      <workItem from="1599471528660" duration="777000" />
+      <workItem from="1599484339557" duration="98000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="74" key="#Project_Structure" timestamp="1591177221471">
@@ -121,34 +127,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1591183150540" />
-    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1592311891714">
+    <state x="549" y="170" key="FileChooserDialogImpl" timestamp="1599484421360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592311891714" />
-    <state width="1493" height="360" key="GridCell.Tab.0.bottom" timestamp="1592179674793">
+    <state x="549" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599484421360" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1599472305067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="360" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592179674793" />
-    <state width="1493" height="360" key="GridCell.Tab.0.center" timestamp="1592179674793">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599472305067" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1599472305067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="360" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592179674793" />
-    <state width="1493" height="360" key="GridCell.Tab.0.left" timestamp="1592179674793">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599472305067" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1599472305067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="360" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592179674793" />
-    <state width="1493" height="360" key="GridCell.Tab.0.right" timestamp="1592179674793">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599472305067" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1599472305067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="360" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592179674793" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599472305067" />
     <state x="394" y="55" key="SettingsEditor" timestamp="1591185416507">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="394" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591185416507" />
-    <state x="222" y="0" key="new project wizard" timestamp="1591337428303">
+    <state x="222" y="0" key="new project wizard" timestamp="1599484435502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="222" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1591337428303" />
+    <state x="222" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1599484435502" />
     <state x="597" y="137" width="672" height="678" key="search.everywhere.popup" timestamp="1592144444880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

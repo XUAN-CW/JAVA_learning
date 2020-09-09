@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="txtInputSimulatorSimplify:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/txtInputSimulatorSimplify_jar</output-path>
+    <root id="archive" name="txtInputSimulatorSimplify.jar">
+      <element id="module-output" name="txtInputSimulatorSimplify" />
+    </root>
+  </artifact>
+</component>

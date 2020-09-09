@@ -13,65 +13,33 @@ import java.util.regex.Pattern;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-        File mayuan = new File("C:\\Users\\86188\\Desktop\\马原\\马原.md");
-        SaveAndRead saveAndRead=new SaveAndRead();
-		String my=saveAndRead.read(mayuan.getAbsolutePath());
-		my=my.replaceAll(" ","").
-				replaceAll("　","").
-				replaceAll("①"," ①").
-				replaceAll("②"," ②").
-				replaceAll("③"," ③").
-				replaceAll("④"," ④").
-				replaceAll("⑤"," ⑤");
-//		System.out.println(my);
+		GetFile getFile = new GetFile(new File("G:\\多媒体课件"));
 
-		Pattern pTitle = Pattern.compile("\\d{1,3}[.、．].+");
-		//创建Matcher对象
-		Matcher mTitle = pTitle.matcher(my);
+		String[] n= {"第01讲-eNSP网络环境的部署实践",
+				"第02讲-以太网基础",
+				"第03讲-交换机组网",
+				"第04讲-交换机组网实践与分析",
+				"第05讲-虚拟局域网",
+				"第06讲-路由器组建的局域网",
+				"第07讲-三层交换机组网",
+				"第08讲-划分子网与构建超网",
+				"第09讲-使用DHCP管理IP地址",
+				"第10讲-无线局域网基础",
+				"第11讲-通过防火墙实现网络安全管理"};
+		for (File f : getFile.getFiles(getFile.selectByPostfix(""))) {
 
-		String nextTitle="";
-		String currentTitle="";
-		if (mTitle.find()){
-			currentTitle=mTitle.group(0);
-			while (mTitle.find()){
-				nextTitle=mTitle.group(0);
-
-		        int temp1=my.indexOf(currentTitle);
-		        int temp2=my.indexOf(nextTitle);
-		        String content=my.substring(temp1+currentTitle.length(),temp2);
-		        content=content.
-						replaceAll("A.","\nA.").
-						replaceAll("B.","\nB.").
-						replaceAll("C.","\nC.").
-						replaceAll("D.","\nD.").
-						replaceAll("\n\n\n","\n").
-						replaceAll("\n\n","\n");
-
-//				System.out.println(currentTitle+content);
-
-
-				try{
-					String[] ABCD=new String[4];
-					Pattern p2 = Pattern.compile("[ABCD][.、． ].+");
-					//创建Matcher对象
-					Matcher m2 = p2.matcher(content);
-					int temp=0;
-					while (m2.find()){
-							ABCD[temp++]=m2.group(0);
-					}
-					for (int i=currentTitle.length()-1;i>0;i--){
-						char ans=currentTitle.charAt(i);
-						if ('A'<=ans&&ans<='D'){
-							System.out.println(currentTitle.replaceAll(" ","")
-									+"\n"+ABCD[ans-'A'].replaceAll(" ","")+"\n");
-							break;
-						}
-					}
-				}catch (Exception e){
-//					System.err.println(currentTitle+content);
+			for (String s:n){
+//				System.out.print(s.contains(f.getName().substring(0,2))?s+f.getName().substring(2):"");
+				if (s.contains(f.getName().substring(0,2))){
+					Rename rename  = new Rename(f);
+					rename.startRename(rename.replace(f.getName(),s+f.getName().substring(2)),true);
 				}
-				currentTitle=nextTitle;
 			}
+//			Rename rename  = new Rename(f);
+//			rename.startRename(rename.addPrefix(f.getParentFile().getName()+" - "),true);
+//			System.out.println(f.getName().substring(0,2));
+
+
 		}
 	}
 }

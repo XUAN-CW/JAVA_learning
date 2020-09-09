@@ -11,41 +11,49 @@ import java.util.regex.Pattern;
 public class JsoupDemo {
     public static void main(String[] args) throws IOException {
 
-        File fileDir = new File("C:\\Users\\86188\\Desktop\\新建文件夹");
+        File file = new File("C:\\Users\\86188\\Desktop\\新建文本文档.txt");
+        Document document = Jsoup.parse(new File(file.getAbsolutePath()), "utf-8");
+        Elements elements = document.getElementsByClass("bd");
+        System.out.println(elements.text());
+//        for (Element e: elements) {
+//            System.out.print(e.text());
+//        }
 
-        for (File file:fileDir.listFiles()) {
-            System.out.println("\n# "+file.getName().replaceAll(".txt","")+"\n");
-            Document document = Jsoup.parse(new File(file.getAbsolutePath()),"utf-8");
-            Elements elements = document.getElementsByClass("Image");
-            Elements content = elements.first().children();
-            StringBuffer stringBuffer = new StringBuffer("");
 
-            for (Element e: content) {
+//        System.out.println(elements.text());
+//        for (File file:fileDir.listFiles()) {
+//            System.out.println("\n# "+file.getName().replaceAll(".txt","")+"\n");
+//            Document document = Jsoup.parse(new File(file.getAbsolutePath()),"utf-8");
+//            Elements elements = document.getElementsByClass("Image");
+//            Elements content = elements.first().children();
+//            StringBuffer stringBuffer = new StringBuffer("");
 
-                if (!e.text().contains(" ")){
-                    continue;
-                }
-                stringBuffer.append(e.text());
-            }
-
-            System.out.println(stringBuffer.toString().
-                    replaceAll(" 1\\)","").
-                    replaceAll(" 2\\)","").
-                    replaceAll(" 3\\)","").
-                    replaceAll(" 4\\)","").
-                    replaceAll(" 5\\)","").
-                    replaceAll(" 6\\)","").
-                    replaceAll(" 7\\)","").
-                    replaceAll(" 8\\)","").
-                    replaceAll(" 9\\)","").
-                    replaceAll(" 10\\)","").
-
-                    replaceAll("\\)","**").
-                    replaceAll(" \\("," **").
-
-                    replaceAll("1/1","")
-            );
-        }
+//            for (Element e: content) {
+//
+//                if (!e.text().contains(" ")){
+//                    continue;
+//                }
+//                stringBuffer.append(e.text());
+//            }
+//
+//            System.out.println(stringBuffer.toString().
+//                    replaceAll(" 1\\)","").
+//                    replaceAll(" 2\\)","").
+//                    replaceAll(" 3\\)","").
+//                    replaceAll(" 4\\)","").
+//                    replaceAll(" 5\\)","").
+//                    replaceAll(" 6\\)","").
+//                    replaceAll(" 7\\)","").
+//                    replaceAll(" 8\\)","").
+//                    replaceAll(" 9\\)","").
+//                    replaceAll(" 10\\)","").
+//
+//                    replaceAll("\\)","**").
+//                    replaceAll(" \\("," **").
+//
+//                    replaceAll("1/1","")
+//            );
+//        }
 
 //        Document document = Jsoup.parse(new File(file.getAbsolutePath()), "utf-8");
 //        Elements elements = document.getElementsByClass("page-content font-large");
@@ -106,5 +114,7 @@ public class JsoupDemo {
 ////            }
 ////        }
 
+//    }
+//}
     }
 }
